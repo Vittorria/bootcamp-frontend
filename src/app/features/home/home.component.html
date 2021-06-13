@@ -1,0 +1,214 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <h2 class="title">About the Event</h2>
+        <h5 class="text-justify description" style="margin: 20px auto 35px">
+          The JS Bootcamp is our fully remote version of our full-time Immersive bootcamp spread across 25 weeks.
+          Don't just learn to codeーlearn how to think like an engineer. Learn the fundamental skills and knowledge
+          required to become an autonomous software engineer competitive in today's ever evolving tech world. Our
+          curriculum is industry-aligned with a Silicon Valley-mindset, optimized for efficiency and impact.
+        </h5>
+        <a (click)="open(classic, 'wide')"
+           class="btn btn-primary btn-round btn-lg">
+          Join Now!</a>
+        <a class="btn btn-primary btn-simple btn-round btn-lg" href="https://en.wikipedia.org/wiki/Coding_bootcamp" target="_blank">
+          Learn more</a>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <ngb-carousel>
+          <ng-template ngbSlide>
+            <img alt="First slide" class="d-block" src="assets/img/carousel1.jpg">
+            <div class="carousel-caption d-none d-md-block">
+              <!--<h5>Development, leanrning</h5>-->
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img alt="Second slide" class="d-block" src="assets/img/carousel4.jpg">
+            <div class="carousel-caption d-none d-md-block">
+              <!--<h5>Java Script </h5>-->
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img alt="Third slide" class="d-block" src="assets/img/carousel3.png">
+            <div class="carousel-caption d-none d-md-block">
+              <!--<h5>Team work</h5>-->
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================== MODAL ====================-->
+
+<ng-template #classic let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="text_align-center title title-upr">Volunteering From</h4>
+    <button (click)="onCloseModal()" class="close" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row" *ngIf="!!errorMessage">
+      <div class="col-md-12">
+        <div class="alert alert-warning" role="alert"><!---->
+          <div class="container">
+            <div class="alert-wrapper">
+              <div class="message"><!----><!---->
+                <div class="alert-icon"><i class="now-ui-icons ui-1_bell-53"></i>
+                </div>
+                <strong>Warning! </strong>{{errorMessage}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-6">
+        <p>Name</p>
+        <div class="input-group">
+          <input [(ngModel)]="model.name" class="form-control" name="name" placeholder="" required type="text">
+          <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="now-ui-icons users_circle-08"></i>
+              </span>
+          </div>
+        </div>
+        <p *ngIf="!model.name" class="text-danger required">This filed is required.</p>
+
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <p>E-Mail</p>
+        <div class="input-group">
+          <input [(ngModel)]="model.email" class="form-control" name="email"
+                 pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                 placeholder="Right Nucleo Icon"
+                 required
+                 type="email">
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <i class="now-ui-icons ui-1_email-85"></i>
+            </span>
+          </div>
+        </div>
+        <p *ngIf="!model.email" class="text-danger required">This filed is required.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-lg-1">
+        <p class="horizontal">Gender</p>
+
+      </div>
+      <div class="col-sm-4 col-lg-2">
+        <div class="form-check form-check-radio">
+          <label class="form-check-label">
+            <input [(ngModel)]="model.gender" [value]="'male'" class="form-check-input" id="exampleRadios1"
+                   name="gender"
+                   type="radio" value="option1">
+            Male
+            <span class="form-check-sign"></span>
+          </label>
+        </div>
+
+      </div>
+      <div class="col-sm-4 col-lg-2">
+        <div class="form-check form-check-radio">
+          <label class="form-check-label">
+            <input [(ngModel)]="model.gender" [value]="'female'" class="form-check-input" id="exampleRadios2"
+                   name="gender"
+                   type="radio" value="option1">
+            Female
+            <span class="form-check-sign"></span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-lg-1">
+        <p class="horizontal">Skills</p>
+      </div>
+      <div clas="col-sm-12 col-lg-2">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input [(ngModel)]="model.bl_time_mng" checked class="form-check-input" type="checkbox" value="">
+            Time Management
+            <span class="form-check-sign"></span>
+          </label>
+        </div>
+      </div>
+      <div clas="col-sm-12 col-lg-2">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input [(ngModel)]="model.bl_english" checked class="form-check-input" type="checkbox" value="">
+            English Lang.
+            <span class="form-check-sign"></span>
+          </label>
+        </div>
+      </div>
+      <div clas="col-sm-12 col-lg-2">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input [(ngModel)]="model.bl_leadership" checked class="form-check-input" type="checkbox" value="">
+            Leadership
+            <span class="form-check-sign"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 10px">
+        <p class="text-primary">Your Motivation</p>
+        <textarea [(ngModel)]="model.comment" class="form-control" cols="80" name="name"
+                  placeholder="You can write additional information here..."
+                  rows="4"></textarea>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input [(ngModel)]="model.bl_accept_privacy_terms" class="form-check-input" name="bl_accept_privacy_terms"
+                 type="checkbox">
+          I agree to the Terms of Service and Privacy Policy
+          <span class="form-check-sign"></span>
+        </label>
+      </div>
+      <!--I agree to the <span class="text-primary">Terms of Service</span> and <span class="text-primary">Privacy Policy</span>-->
+      <div class="form-check">
+        <label class="form-check-label">
+          <input [(ngModel)]="model.bl_accept_email_offers" class="form-check-input" name="bl_accept_email_offers"
+                 type="checkbox" value="">
+          Send md JS BootCamp 21 news, events and exclusive offers
+          <span class="form-check-sign"></span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <div class="left-side">
+      <button #closeAddExpenseModal (click)="onCloseModal()" class="btn btn-default btn-link" data-dismiss="modal"
+              type="button">Cancel
+      </button>
+    </div>
+    <div class="divider"></div>
+    <div class="right-side">
+      <button (click)="onSubmitModal()" class="btn btn-primary btn-round" type="button"><i
+              class="now-ui-icons ui-1_send"></i> Submit
+      </button>
+    </div>
+  </div>
+
+</ng-template>
+
+
+<app-contact></app-contact>

@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap.scss";
+
+.map-responsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+
+.map-responsive iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
+.required {
+  font-size: 0.8em;
+}
+
+
+.contactus-2 .info-horizontal .icon {
+  margin-top: 28px;
+}
+
+.contactus-2 .info-horizontal .icon>i {
+  font-size: 2.2em;
+  max-width: 45px;
+}
+
+.horizontal {
+  margin-top: 0.65rem;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
