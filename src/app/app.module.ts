@@ -32,7 +32,7 @@ import {CommonModule} from '@angular/common';
         I18nModule,
         ReactiveFormsModule,
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyDEAOXuWJY0GSPVdsfjXzLUwLo-3erB0kU'
+            apiKey: ''
         }),
         CommonModule
     ],
